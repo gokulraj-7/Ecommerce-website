@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+html {
+    font-size: 62.5%; /* default font size = 16px x 62.5 = 10px = 1rem */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(b3.jpg);
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    /* reason of using this we have root element inside public */
+    height: 100%;
+}
+
+/* Layout */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
+}
+
+header {
+    grid-area: header; /*connecting the element to the container created on grid-container*/
+    background-color: #000000;
+    font-family: 'League Spartan', sans-serif;
+}
+
+main {
+    grid-area: main; /*connecting the element to the container created on grid-container*/
+    padding: 1rem;
+}
+
+footer {
+    grid-area: footer; /*connecting the element to the container created on grid-container*/
+    background-color: #000000;
+    font-family: 'Lobster Two', cursive;
+    color: #f8844e;
+    box-shadow: #000000 0px 0px 30px 20px;
+}
+
+/* Common */
+
+h1 {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+
+h2 {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    color: black;
+}
+
+h2:hover {
+    color: #ff8000;
+}
+
+.header-links {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff8000;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li {
+    margin-top: 1rem;
+}
+
+input,
+select,
+textarea,
+button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem #a4a4a4;
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+    background-color: #000000;
+    cursor: pointer;
+    color: #f8844e;
+    font-weight: bold;
+}
+
+input:hover,
+select:hover,
+textarea:hover,
+button:hover {
+    border: 0.1rem #404040 solid;
+}
+
+button.primary {
+    background-color: #000000;
+    color: #f8844e;
+    font-weight: bold;
+}
+
+button.block {
+    width: 100%;
+    color: #f8844e;
+    background-color: #000000;
+}
+
+button.small {
+    font-size: small;
+    background-color: #000000;
+    color: #f8844e;
+    font-weight: bold;
+}
+
+/* Header */
+header a {
+    color: #f8844e;
+    padding: 1rem;
+}
+
+a.brand {
+    color: #f8844e;
+    font-size: 3rem;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-shadow: 0 0 3px #0b3761, 0 0 5px #001aff;
+}
+
+.badge {
+    background-color: #3a78ff;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 0.2rem 0.7rem;
+    font-size: 1.4rem;
+    margin-left: 0.2rem;
+}
+
+.row {
+    display: flex; /* to create element next to each other */
+    flex-wrap: wrap; /* To make rows responsive */
+    justify-content: space-between; /*Create maximum space between items*/
+    align-items: center; /*creating vertically centered*/
+}
+
+.row.center {
+    justify-content: center;
+}
+
+.row.top {
+    align-items: flex-start;
+}
+
+.col-1 {
+    flex: 1 1 25rem;
+}
+
+.col-2 {
+    flex: 2 1 50rem;
+}
+
+.min-30 {
+    min-width: 30rem;
+}
+
+.back {
+    color: #f8844e;
+    background-color: #000000;
+    padding: 0.2rem;
+    border: 0.5px solid rgb(197, 197, 197);
+}
+
+.back:hover {
+    color: yellow;
+}
+
+/* Image  for home screen */
+
+img {
+    border-radius: 0.5rem;
+}
+
+img.small {
+    max-width: 5rem;
+    width: 100%;
+}
+
+img.medium {
+    max-width: 30rem;
+    max-height: 40rem;
+    width: 100%;
+}
+
+img.large {
+    margin-top: 5rem;
+    width: 80%;
+    margin-left: 5rem;
+}
+
+/* Card */
+
+.card {
+    border: 0.1rem #c0c0c0 solid;
+    background-color: #ffebeb;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-body > * {
+    margin-bottom: 00.5rem;
+} /* Star means all the direct child of card-body*/
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Rating */
+.rating span {
+    color: #f0c040;
+    margin: 0.1rem;
+}
+
+.rating span:last-child {
+    color: #404040;
+}
+
+/*Alert*/
+
+.loading {
+    display: block !important;
+}
+
+.success {
+    color: #20a020;
+    background-color: #d5ffd5;
+    padding: 1rem;
+}
+
+.danger {
+    color: #a02020;
+}
+
+.alert {
+    padding: 1rem;
+    border: 0.1rem solid transparent;
+    border-radius: 0.5rem;
+}
+
+.alert-info {
+    color: #2020a0;
+    background-color: #e0e0ff;
+}
+
+.alert-danger {
+    color: #a02020;
+    background-color: #ffe0e0e0;
+}
+
+/* Form */
+.form {
+    background-color: #ffebeb;
+    max-width: 60rem;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+.form > div {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.form label {
+    margin: 1rem 0;
+}
+
+.input {
+    border-bottom: 0.2rem solid black;
+}
+
+/*Dropdown */
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    min-width: 12rem;
+    padding: 1rem;
+    z-index: 1;
+    background-color: #000000;
+    margin: 0;
+    margin-top: 0.4rem;
+    border-radius: 0.5rem;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*Checkou steps*/
+
+.checkout-steps > div {
+    border-top: 0.3rem #c0c0c0 solid;
+    color: #c0c0c0;
+    flex: 1;
+    padding: 1rem;
+}
+
+.checkout-steps > div.active {
+    border-top-color: rgb(233, 0, 0);
+    color: rgb(233, 0, 0);
+}
+
+/*Table*/
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: #fdc4ae;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #a1a1a1;
+}
+
+.table td,
+.table th {
+    text-align: left;
+    border: 0.1rem solid #e4e4e4;
+    padding: 0.5rem;
+}
+
+.table button {
+    margin: 0 0.2rem;
+    border: 0.1rem solid black;
+}
